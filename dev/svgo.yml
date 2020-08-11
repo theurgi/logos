@@ -1,0 +1,14 @@
+# Pass over SVGs multiple times to ensure all optimizations are applied.
+multipass: true
+
+plugins:
+  # Removing dimensions from the SVG (the width and height attributes) will
+  # cause a viewBox attribute to be added if it doesn't already exist; the
+  # viewBox attribute will have a width and height equal to the dimensions
+  # that were removed.
+  - removeDimensions: true
+
+  # Without this setting, SVGs may not render correctly in vector editors like
+  # Adobe Illustrator.
+  - convertPathData:
+      noSpaceAfterFlags: false
