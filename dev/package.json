@@ -16,8 +16,8 @@
     }
   },
   "lint-staged": {
-    "../**/*.{json,yml}": "prettier --write",
-    "../*.svg": "minify"
+    "*.{json,yml}": "prettier --write",
+    "../*.svg": "yarn minify"
   },
   "prettier": {
     "endOfLine": "lf"
